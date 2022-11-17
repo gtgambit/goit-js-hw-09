@@ -15,6 +15,7 @@ const secondsEl = document.querySelector('[data-seconds]');
 startBtnEl.setAttribute('disabled', '');
 
 let deadlines = null;
+let isValidDate;
 
 const options = {
   enableTime: true,
@@ -22,7 +23,7 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    let isValidDate = selectedDates[0] > options.defaultDate;
+    isValidDate = selectedDates[0] > options.defaultDate;
     deadlines = selectedDates[0].getTime();
     if (isValidDate) {
       return startBtnEl.removeAttribute('disabled');
