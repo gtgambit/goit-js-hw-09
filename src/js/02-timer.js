@@ -22,7 +22,7 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    isValidDate = selectedDates[0] > options.defaultDate;
+    let isValidDate = selectedDates[0] > options.defaultDate;
     deadlines = selectedDates[0].getTime();
     if (isValidDate) {
       return startBtnEl.removeAttribute('disabled');
